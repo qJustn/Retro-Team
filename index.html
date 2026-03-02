@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0014" />
+  <title>Retro Roleplay — Probe Supporter Bewerbung</title>
+  <meta name="description" content="Bewerbung als Probe Supporter bei Retro Roleplay. Schnell, strukturiert und im Retro-Neon-Design." />
+
+  <style>
+    :root{
+      --bg0:#05000c;
+      --bg1:#0b0014;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.09);
+      --stroke: rgba(255,255,255,.14);
+      --text:#f1efff;
+      --muted: rgba(241,239,255,.72);
+      --muted2: rgba(241,239,255,.56);
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --shadow2: 0 10px 28px rgba(0,0,0,.38);
+      --r: 18px;
+      --r2: 26px;
+      --container: 1120px;
+      --pad: clamp(16px, 3vw, 28px);
+
+      --pink:#ff4bd8;
+      --violet:#8a3cff;
+      --cyan:#1fe3ff;
+      --orange:#ffb648;
+      --lime:#23ffb5;
+
+      --h1: clamp(2.1rem, 4.6vw, 3.4rem);
+      --h2: clamp(1.5rem, 2.8vw, 2.0rem);
+      --p: clamp(1rem, 1.25vw, 1.06rem);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 600px at 15% 15%, rgba(255,75,216,.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(31,227,255,.14), transparent 60%),
+        radial-gradient(900px 600px at 55% 115%, rgba(255,182,72,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .container{width:min(var(--container), calc(100% - 2*var(--pad))); margin:0 auto}
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--bg1) 72%, transparent);
+      border-bottom:1px solid var(--stroke);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 14px;
+      padding: 14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width:0;
+    }
+    .brand .wordmark{
+      display:flex; flex-direction:column; line-height:1.06;
+      min-width:0;
+    }
+    .brand .wordmark .t{
+      font-weight:950; letter-spacing:.4px;
+      text-transform:uppercase;
+      font-size: 1.02rem;
+    }
+    .brand .wordmark .s{
+      color: var(--muted);
+      font-weight:750;
+      font-size: .86rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .navlinks{display:flex; align-items:center; gap:10px}
+    .navlinks a{
+      padding: 10px 12px;
+      border-radius: 14px;
+      color: var(--muted);
+      font-weight:800;
+      transition:.2s ease;
+    }
+    .navlinks a:hover{background:var(--card); color:var(--text)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border:1px solid var(--stroke);
+      background: var(--card);
+      color: var(--text);
+      font-weight:900;
+      cursor:pointer;
+      transition:.2s ease;
+      user-select:none;
+      box-shadow:none;
+    }
+    .btn:hover{transform: translateY(-1px); background: var(--card2)}
+    .btn.primary{
+      border-color: color-mix(in srgb, var(--pink) 55%, var(--stroke));
+      background:
+        radial-gradient(120% 120% at 0% 0%, rgba(255,255,255,.16), transparent 55%),
+        linear-gradient(135deg, var(--pink), var(--violet) 45%, var(--cyan));
+      box-shadow: var(--shadow2);
+    }
+
+    .burger{
+      display:none;
+      width:44px;height:44px;
+      border-radius:14px;
+      border:1px solid var(--stroke);
+      background:var(--card);
+      cursor:pointer;
+    }
+    .burger svg{width:20px;height:20px}
+    .mobile{display:none; padding: 0 0 14px 0}
+    .mobile a{
+      display:block;
+      padding: 12px 10px;
+      border-radius: 14px;
+      color: var(--muted);
+      font-weight:850;
+    }
+    .mobile a:hover{background:var(--card); color:var(--text)}
+    .divider{height:1px; background: var(--stroke); margin-top: 12px}
+
+    /* Hero */
+    header.hero{
+      padding: clamp(28px, 5.5vw, 70px) 0 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: clamp(16px, 3vw, 28px);
+      align-items: start;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: color-mix(in srgb, var(--card) 78%, transparent);
+      color: var(--muted);
+      font-weight: 900;
+      font-size: .92rem;
+      width: fit-content;
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: var(--h1);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .sub{
+      margin: 0 0 18px;
+      font-size: var(--p);
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 62ch;
+    }
+
+    .hero-cta{display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px}
+    .stats{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .stat{
+      padding: 14px;
+      border-radius: var(--r);
+      border:1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow2);
+    }
+    .stat .k{font-weight: 950; letter-spacing:-.01em}
+    .stat .d{margin-top:6px; color: var(--muted); font-weight:800; font-size:.92rem}
+
+    /* Neon card */
+    .panel{
+      border-radius: var(--r2);
+      border:1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .panel.neon{
+      background:
+        radial-gradient(120% 120% at 20% 10%, rgba(255,75,216,.20), transparent 60%),
+        radial-gradient(120% 120% at 85% 0%, rgba(31,227,255,.14), transparent 55%),
+        radial-gradient(120% 120% at 70% 115%, rgba(255,182,72,.12), transparent 55%),
+        var(--card);
+    }
+    .panel .inner{padding: 18px}
+    .badge{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      padding: 12px;
+      border-radius: 16px;
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.18);
+    }
+    .badge .left{display:flex; align-items:center; gap:10px; min-width:0}
+    .dot{
+      width:10px;height:10px;border-radius:99px;
+      background: var(--lime);
+      box-shadow: 0 0 0 7px rgba(35,255,181,.13);
+      flex-shrink:0;
+    }
+    .badge .t{display:flex; flex-direction:column; line-height:1.1; min-width:0}
+    .badge .t span:first-child{font-weight:950}
+    .badge .t span:last-child{color:var(--muted); font-weight:850; font-size:.9rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .chip{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.06);
+      font-weight: 950;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .quick{margin-top: 14px; display:grid; gap:12px}
+    .qrow{
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.06);
+      border-radius: 18px;
+      padding: 12px;
+    }
+    .qrow .label{color:var(--muted); font-weight:900; font-size:.86rem}
+    .qrow .value{margin-top:6px; font-weight:950; line-height:1.35}
+
+    /* Sections */
+    section{padding: clamp(26px, 4.8vw, 56px) 0}
+    .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:14px; margin-bottom: 16px}
+    h2{margin:0; font-size: var(--h2); letter-spacing:-.01em}
+    .lead{margin: 6px 0 0; color: var(--muted); line-height:1.65; font-size: var(--p); max-width: 70ch}
+
+    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px}
+    .card{
+      grid-column: span 4;
+      padding: 18px;
+      border-radius: var(--r2);
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow2);
+      transition:.2s ease;
+    }
+    .card:hover{transform: translateY(-2px); background: var(--card2)}
+    .card h3{margin: 10px 0 8px; font-size: 1.1rem; letter-spacing:-.01em}
+    .card p{margin: 0; color: var(--muted); line-height:1.65; font-size: var(--p)}
+    .mini{
+      width:42px;height:42px;border-radius: 14px;
+      display:grid; place-items:center;
+      border: 1px solid color-mix(in srgb, var(--pink) 55%, var(--stroke));
+      background:
+        radial-gradient(120% 120% at 0% 0%, rgba(255,255,255,.16), transparent 55%),
+        linear-gradient(135deg, var(--pink), var(--violet) 50%, var(--cyan));
+      box-shadow: var(--shadow2);
+    }
+    .mini svg{width:20px;height:20px}
+
+    /* Form */
+    .formgrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items:start;
+    }
+    form{display:grid; gap: 12px}
+    label{display:grid; gap:6px; font-weight:950; color: var(--muted); font-size:.92rem}
+    input, textarea, select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      outline:none;
+      transition:.2s ease;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color: color-mix(in srgb, var(--cyan) 55%, var(--stroke));
+      box-shadow: 0 0 0 7px rgba(31,227,255,.12);
+    }
+    textarea{min-height: 150px; resize: vertical}
+    .hint{color: var(--muted2); font-weight:800; line-height:1.55; font-size:.92rem}
+    .ibox{
+      border-radius: var(--r2);
+      border:1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow2);
+      padding: 16px;
+    }
+    .row{display:flex; gap:10px; align-items:center; color: var(--muted); font-weight:950}
+    .row svg{width:18px;height:18px}
+    .big{margin-top:10px; font-weight:950; line-height:1.35}
+    .big a{ text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px }
+
+    details{
+      border:1px solid var(--stroke);
+      background: var(--card);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: var(--shadow2);
+    }
+    details + details{margin-top: 12px}
+    summary{
+      cursor:pointer; list-style:none;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      font-weight:950;
+    }
+    summary::-webkit-details-marker{display:none}
+    .chev{transition: transform .2s ease}
+    details[open] .chev{transform: rotate(180deg)}
+    details p{margin: 10px 0 0; color: var(--muted); line-height:1.65}
+
+    footer{
+      padding: 28px 0 40px;
+      border-top: 1px solid var(--stroke);
+      color: var(--muted);
+    }
+    .foot{display:flex; justify-content:space-between; align-items:flex-start; gap: 16px; flex-wrap:wrap}
+    .foot small{font-weight:800}
+
+    /* Reveal */
+    .reveal{opacity:0; transform: translateY(10px)}
+    .reveal.show{opacity:1; transform: translateY(0); transition:.65s ease}
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      .stats{grid-template-columns: 1fr}
+      .card{grid-column: span 6}
+      .formgrid{grid-template-columns: 1fr}
+    }
+    @media (max-width: 720px){
+      .navlinks{display:none}
+      .burger{display:inline-flex; align-items:center; justify-content:center}
+      .mobile{display:block}
+      .card{grid-column: span 12}
+      .section-head{flex-direction:column; align-items:flex-start}
+    }
+
+    /* Inline SVG sizing */
+    .logoWrap{display:flex; align-items:center; gap:12px}
+    .palmLogo{width:54px; height:54px; flex-shrink:0; filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));}
+    .rrWordmark{width:160px; height:42px; flex-shrink:0}
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <nav class="nav" aria-label="Navigation">
+        <a class="brand" href="#top" aria-label="Zur Startseite">
+          <div class="logoWrap">
+            <!-- PALM LOGO (inline SVG, no file needed) -->
+            <svg class="palmLogo" viewBox="0 0 120 120" role="img" aria-label="Retro Palm Logo" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gTrunk" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffb648"/>
+                  <stop offset="0.55" stop-color="#ff6aa8"/>
+                  <stop offset="1" stop-color="#8a3cff"/>
+                </linearGradient>
+                <linearGradient id="gLeaf1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffb648"/>
+                  <stop offset="0.7" stop-color="#ff4bd8"/>
+                  <stop offset="1" stop-color="#8a3cff"/>
+                </linearGradient>
+                <linearGradient id="gLeaf2" x1="1" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1fe3ff"/>
+                  <stop offset="0.6" stop-color="#8a3cff"/>
+                  <stop offset="1" stop-color="#ff4bd8"/>
+                </linearGradient>
+                <filter id="neon" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur stdDeviation="2.7" result="b"/>
+                  <feColorMatrix in="b" type="matrix"
+                    values="1 0 0 0 0
+                            0 0.25 0 0 0
+                            0 1 0 0 0
+                            0 0 0 1 0" result="c"/>
+                  <feMerge>
+                    <feMergeNode in="c"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+                <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur stdDeviation="5" result="b"/>
+                  <feColorMatrix in="b" type="matrix"
+                    values="1 0 0 0 0
+                            0 0.4 0 0 0
+                            0 1 0 0 0
+                            0 0 0 0.9 0" />
+                </filter>
+              </defs>
+
+              <!-- horizon line -->
+              <g opacity="0.95">
+                <rect x="8" y="66" width="104" height="4" rx="2" fill="#ff4bd8" filter="url(#softGlow)"/>
+                <rect x="8" y="66" width="104" height="2" rx="1" fill="#1fe3ff" opacity="0.55"/>
+              </g>
+
+              <!-- trunks -->
+              <path d="M56 96c2-18-4-30-12-44-2-4-1-8 2-10 6-3 14 6 18 16 5 12 6 24 4 38-4 1-8 1-12 0z"
+                    fill="url(#gTrunk)" stroke="rgba(255,255,255,.18)" stroke-width="1.2" filter="url(#neon)"/>
+              <path d="M75 96c2-16-1-28-8-40-2-4-1-7 2-9 6-3 12 5 15 14 4 11 4 21 2 35-4 1-7 1-11 0z"
+                    fill="url(#gTrunk)" opacity="0.95" stroke="rgba(255,255,255,.15)" stroke-width="1.2" filter="url(#neon)"/>
+
+              <!-- leaves -->
+              <path d="M55 36c-10-10-28-10-36 2 14 2 24 8 34 16 4-4 6-11 2-18z"
+                    fill="url(#gLeaf1)" filter="url(#neon)" opacity="0.95"/>
+              <path d="M58 34c3-14 16-22 32-20-9 11-12 22-12 35-8 0-16-6-20-15z"
+                    fill="url(#gLeaf2)" filter="url(#neon)" opacity="0.95"/>
+              <path d="M60 40c10-7 26-4 34 8-14-1-25 3-36 10-2-6-2-13 2-18z"
+                    fill="url(#gLeaf1)" filter="url(#neon)" opacity="0.9"/>
+              <path d="M52 40c-8-6-20-5-28 4 11 0 20 4 29 10 2-5 2-10-1-14z"
+                    fill="url(#gLeaf2)" filter="url(#neon)" opacity="0.9"/>
+            </svg>
+
+            <!-- RETRO ROLEPLAY WORDMARK (inline SVG, no file needed) -->
+            <svg class="rrWordmark" viewBox="0 0 420 110" role="img" aria-label="RETRO ROLEPLAY" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="rrGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#8a3cff"/>
+                  <stop offset="0.55" stop-color="#ff4bd8"/>
+                  <stop offset="1" stop-color="#1fe3ff"/>
+                </linearGradient>
+                <filter id="rrGlow" x="-40%" y="-60%" width="180%" height="220%">
+                  <feGaussianBlur stdDeviation="3.2" result="b"/>
+                  <feColorMatrix in="b" type="matrix"
+                    values="1 0 0 0 0
+                            0 0.3 0 0 0
+                            0 1 0 0 0
+                            0 0 0 1 0" result="c"/>
+                  <feMerge>
+                    <feMergeNode in="c"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <rect x="6" y="8" width="408" height="94" rx="20" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/>
+              <text x="210" y="52" text-anchor="middle"
+                    font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+                    font-size="44" font-weight="950" letter-spacing="2"
+                    fill="url(#rrGrad)" filter="url(#rrGlow)">RETRO</text>
+              <text x="210" y="88" text-anchor="middle"
+                    font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+                    font-size="40" font-weight="950" letter-spacing="1.6"
+                    fill="url(#rrGrad)" filter="url(#rrGlow)">ROLEPLAY</text>
+            </svg>
+          </div>
+
+          <div class="wordmark">
+            <div class="t">Bewerbung</div>
+            <div class="s">Probe Supporter • Retro Roleplay</div>
+          </div>
+        </a>
+
+        <div class="navlinks">
+          <a href="#anforderungen">Anforderungen</a>
+          <a href="#bewerbung">Bewerbung</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:10px">
+          <a class="btn primary" href="#bewerbung">Jetzt bewerben</a>
+
+          <button class="burger" id="burger" aria-label="Menü öffnen/schließen" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div class="mobile" id="mobileNav" hidden>
+        <a href="#anforderungen">Anforderungen</a>
+        <a href="#bewerbung">Bewerbung</a>
+        <a href="#faq">FAQ</a>
+        <div class="divider"></div>
+        <a class="btn primary" style="width:100%; margin-top:12px" href="#bewerbung">Jetzt bewerben</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="top" class="container">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="pill">🛟 <span><b>Probe Supporter</b> • Bewerbungsphase geöffnet</span></div>
+          <h1>Hilf der Community — werde Teil des Retro Roleplay Teams.</h1>
+          <p class="sub">
+            Du willst den Server aktiv mitgestalten, neuen Spielern helfen und in stressigen Situationen ruhig bleiben?
+            Dann bewirb dich als <b>Probe Supporter</b>. Wir suchen Leute mit Herz, Verstand und Teamgeist.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn primary" href="#bewerbung">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Bewerbung starten
+            </a>
+            <a class="btn" href="#anforderungen">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M8 7h8M8 11h8M8 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M6 3h12a2 2 0 0 1 2 2v16l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" opacity=".7"/>
+              </svg>
+              Anforderungen lesen
+            </a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="k">Freundlichkeit</div>
+              <div class="d">ruhig bleiben & fair handeln</div>
+            </div>
+            <div class="stat">
+              <div class="k">Aktivität</div>
+              <div class="d">im Spiel + auf Discord präsent</div>
+            </div>
+            <div class="stat">
+              <div class="k">Verantwortung</div>
+              <div class="d">Regeln kennen & umsetzen</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel neon reveal">
+          <div class="inner">
+            <div class="badge">
+              <div class="left">
+                <span class="dot" aria-hidden="true"></span>
+                <div class="t">
+                  <span>Supporter Bewerbung</span>
+                  <span>Strukturiert • Vollständig • Ehrlich</span>
+                </div>
+              </div>
+              <div style="display:flex; gap:8px">
+                <span class="chip">Discord</span>
+                <span class="chip">Ingame</span>
+              </div>
+            </div>
+
+            <div class="quick">
+              <div class="qrow">
+                <div class="label">So läuft’s ab</div>
+                <div class="value">1) Formular ausfüllen → 2) Prüfung → 3) Gespräch/Feedback</div>
+              </div>
+              <div class="qrow">
+                <div class="label">Wichtig</div>
+                <div class="value">Nimm dir 5 Minuten Zeit — Qualität schlägt Länge.</div>
+              </div>
+              <div class="qrow">
+                <div class="label">Hinweis</div>
+                <div class="value">Diese Seite sendet per Mail/Discord-Text (ohne Server/Backend).</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <!-- Anforderungen -->
+    <section id="anforderungen">
+      <div class="section-head reveal">
+        <div>
+          <h2>Anforderungen (wie im Discord-Post)</h2>
+          <p class="lead">
+            Wir suchen motivierte und hilfsbereite Spieler mit gutem Umgangston. Das sind die Mindestanforderungen:
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal">
+          <div class="mini" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 8v5l3 2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="white" stroke-width="2" opacity=".6"/>
+            </svg>
+          </div>
+          <h3>Mind. 5 Tage Spielzeit</h3>
+          <p>Du kennst das Grundkonzept und hast genug Erfahrung gesammelt.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="mini" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="white" stroke-width="2" opacity=".75"/>
+              <path d="M7.5 9h9M7.5 12h6.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Gute Kommunikation</h3>
+          <p>Schriftlich & mündlich freundlich, klar und lösungsorientiert.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="mini" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Hohe Aktivität</h3>
+          <p>Im Spiel und auf Discord regelmäßig präsent, zuverlässig erreichbar.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="mini" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M6 3h12a2 2 0 0 1 2 2v16l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z" stroke="white" stroke-width="2"/>
+              <path d="M8 8h8M8 12h8M8 16h6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Regeln & Konzept kennen</h3>
+          <p>Du kennst die Serverregeln und verstehst das Gesamtkonzept.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="mini" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M9 12l2 2 4-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="white" stroke-width="2" opacity=".55"/>
+            </svg>
+          </div>
+          <h3>Teamfähig & respektvoll</h3>
+          <p>Du gehst fair mit Spielern um und kannst im Team arbeiten.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="mini" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="white" stroke-width="2"/>
+              <path d="M4 21a8 8 0 0 1 16 0" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Mindestalter 18</h3>
+          <p>Wie im Post: Bewerbungen erst ab 18 Jahren.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Bewerbung -->
+    <section id="bewerbung">
+      <div class="section-head reveal">
+        <div>
+          <h2>Bewerbung (Formular)</h2>
+          <p class="lead">
+            Füll alles ehrlich aus. Am Ende kannst du es per Mail senden oder als Text kopieren und in ein Ticket einfügen.
+          </p>
+        </div>
+      </div>
+
+      <div class="formgrid">
+        <div class="panel reveal">
+          <div class="inner">
+            <form id="appForm">
+              <label>
+                Discord Name (inkl. Tag)
+                <input name="discord" placeholder="z.B. Jeff#0001" required />
+              </label>
+
+              <label>
+                Alter (18+)
+                <input name="age" type="number" min="18" placeholder="18" required />
+              </label>
+
+              <label>
+                Spielzeit (in Tagen)
+                <input name="playtime" type="number" min="5" placeholder="5" required />
+              </label>
+
+              <label>
+                Aktivitätszeiten (ungefähr)
+                <input name="times" placeholder="z.B. Mo–Fr 18–23 Uhr, Wochenende flexibel" required />
+              </label>
+
+              <label>
+                Warum willst du Probe Supporter werden?
+                <textarea name="why" placeholder="Kurz & konkret: Motivation, Team, Community, Ziele…" required></textarea>
+              </label>
+
+              <label>
+                Was sind deine Stärken im Support?
+                <textarea name="strengths" placeholder="z.B. ruhig bleiben, fair, klar kommunizieren, Regeln kennen…" required></textarea>
+              </label>
+
+              <label>
+                Erfahrung (falls vorhanden)
+                <textarea name="exp" placeholder="Hast du schon moderiert / supportet? Wenn nein: Lernbereitschaft erklären." required></textarea>
+              </label>
+
+              <label>
+                Zusätzliche Infos (optional)
+                <textarea name="extra" placeholder="Alles, was du noch sagen willst (optional)"></textarea>
+              </label>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px">
+                <button class="btn primary" type="submit">Als Mail senden</button>
+                <button class="btn" id="copyBtn" type="button">Als Text kopieren</button>
+              </div>
+
+              <div class="hint" id="formHint" style="margin-top:10px">
+                ⚙️ In <b>CONFIG</b> unten kannst du die Ziel-E-Mail anpassen. Wenn du keine Mail willst, nutz „Als Text kopieren“ und paste ins Ticket.
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="reveal" style="display:grid; gap:12px">
+          <div class="ibox">
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 4h16v16H4V4Z" stroke="currentColor" stroke-width="2" opacity=".55"/>
+                <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Ziel (anpassen)
+            </div>
+            <div class="big">
+              <div>E-Mail: <a id="emailLink" href="#">bewerbung@example.com</a></div>
+              <div style="margin-top:8px">Ticket-Channel: <b>#nimm-ein-ticket</b></div>
+            </div>
+            <p class="hint" style="margin:10px 0 0">
+              Wenn Mail auf dem Handy nicht öffnet: kopier den Text → ins Ticket einfügen ✅
+            </p>
+          </div>
+
+          <div class="ibox">
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2" opacity=".55"/>
+              </svg>
+              Tipp für mehr Chancen
+            </div>
+            <div class="big">
+              Schreib konkret: <b>Beispiele</b>, wie du Streit deeskalierst, Regeln erklärst oder Neulingen hilfst.
+            </div>
+          </div>
+
+          <div class="ibox">
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2v20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".85"/>
+                <path d="M5 7h14M7 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".85"/>
+              </svg>
+              Fairness
+            </div>
+            <div class="big">
+              Als Supporter: <b>neutral</b> bleiben, <b>Beweise</b> prüfen, <b>ruhig</b> handeln.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-head reveal">
+        <div>
+          <h2>FAQ</h2>
+          <p class="lead">Kurz beantwortet – damit du nichts vergisst.</p>
+        </div>
+      </div>
+
+      <details class="reveal">
+        <summary>
+          Muss ich die Bewerbung per Mail schicken?
+          <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <p>Nein. Nutze „Als Text kopieren“ und füge die Bewerbung direkt ins Ticket ein.</p>
+      </details>
+
+      <details class="reveal">
+        <summary>
+          Was ist wichtiger: Länge oder Struktur?
+          <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <p>Struktur. Kurze, klare Antworten mit Beispielen wirken besser als ein Roman ohne Inhalt.</p>
+      </details>
+
+      <details class="reveal">
+        <summary>
+          Kann ich das Design/Logo ändern?
+          <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <p>Ja. Die Logos sind inline als SVG. Du kannst Farben/Größen direkt im Code anpassen – ohne extra Dateien.</p>
+      </details>
+    </section>
+
+    <footer>
+      <div class="foot container">
+        <div>
+          <div style="font-weight:950; letter-spacing:.6px; text-transform:uppercase">Retro Roleplay</div>
+          <small>© <span id="year"></span> • Probe Supporter Bewerbung</small>
+        </div>
+        <small>
+          <a href="#top" style="text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:2px">Nach oben</a>
+        </small>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // =========================
+    // CONFIG (hier anpassen)
+    // =========================
+    const CONFIG = {
+      email: "bewerbung@example.com", // <- Ziel-Mail (oder egal, wenn du nur kopierst)
+      subject: "Bewerbung: Probe Supporter — Retro Roleplay"
+    };
+
+    // Set year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const burger = document.getElementById("burger");
+    const mobileNav = document.getElementById("mobileNav");
+    burger?.addEventListener("click", () => {
+      const open = burger.getAttribute("aria-expanded") === "true";
+      burger.setAttribute("aria-expanded", String(!open));
+      mobileNav.hidden = open;
+    });
+    mobileNav?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      burger.setAttribute("aria-expanded","false");
+      mobileNav.hidden = true;
+    }));
+
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", (e) => {
+        const id = link.getAttribute("href");
+        const el = id && document.querySelector(id);
+        if(el){
+          e.preventDefault();
+          el.scrollIntoView({ behavior:"smooth", block:"start" });
+        }
+      });
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    // Email link
+    const emailLink = document.getElementById("emailLink");
+    emailLink.textContent = CONFIG.email;
+    emailLink.href = `mailto:${encodeURIComponent(CONFIG.email)}?subject=${encodeURIComponent(CONFIG.subject)}`;
+
+    // Build application text
+    function buildText(fd){
+      const get = (k) => (fd.get(k) || "").toString().trim();
+      return [
+        "🛟 Bewerbung als Probe Supporter — Retro Roleplay",
+        "",
+        `Discord: ${get("discord")}`,
+        `Alter: ${get("age")}`,
+        `Spielzeit (Tage): ${get("playtime")}`,
+        `Aktivitätszeiten: ${get("times")}`,
+        "",
+        "1) Warum möchtest du Probe Supporter werden?",
+        get("why"),
+        "",
+        "2) Was sind deine Stärken im Support?",
+        get("strengths"),
+        "",
+        "3) Erfahrung / Lernbereitschaft",
+        get("exp"),
+        "",
+        "4) Zusätzliche Infos (optional)",
+        get("extra") || "-",
+        "",
+        "— Ende —"
+      ].join("\n");
+    }
+
+    const form = document.getElementById("appForm");
+    const hint = document.getElementById("formHint");
+    const copyBtn = document.getElementById("copyBtn");
+
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const body = buildText(fd);
+
+      const mailto =
+        `mailto:${encodeURIComponent(CONFIG.email)}?subject=${encodeURIComponent(CONFIG.subject)}&body=${encodeURIComponent(body)}`;
+
+      hint.textContent = "Öffne E-Mail-Entwurf… (wenn nichts passiert: nutze „Als Text kopieren“ und paste ins Ticket).";
+      window.location.href = mailto;
+
+      setTimeout(() => {
+        hint.innerHTML = '⚙️ In <b>CONFIG</b> unten kannst du die Ziel-E-Mail anpassen. Wenn du keine Mail willst, nutz „Als Text kopieren“ und paste ins Ticket.';
+      }, 3500);
+    });
+
+    copyBtn?.addEventListener("click", async () => {
+      const fd = new FormData(form);
+      const body = buildText(fd);
+
+      try{
+        await navigator.clipboard.writeText(body);
+        hint.textContent = "✅ Bewerbung kopiert! Jetzt ins Ticket einfügen.";
+      }catch{
+        // Fallback for older browsers
+        const ta = document.createElement("textarea");
+        ta.value = body;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+        hint.textContent = "✅ Bewerbung kopiert! Jetzt ins Ticket einfügen.";
+      }
+
+      setTimeout(() => {
+        hint.innerHTML = '⚙️ In <b>CONFIG</b> unten kannst du die Ziel-E-Mail anpassen. Wenn du keine Mail willst, nutz „Als Text kopieren“ und paste ins Ticket.';
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
